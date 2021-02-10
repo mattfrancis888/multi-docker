@@ -25,6 +25,8 @@ app.get("/category", async (req, res) => {
     res.send(values.rows.map((category) => category.category_name));
 });
 
-app.listen(5000, (err) => {
+const port = process.env.PORT || 5000;
+//process.env.PORT is default port heroku gives us
+app.listen(port, (err) => {
     console.log("Listening");
 });

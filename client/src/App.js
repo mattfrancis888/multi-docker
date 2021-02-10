@@ -1,7 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-function App() {
+const axiosConfig = axios.create({
+    baseURL: "http://localhost:5000/",
+});
+
+const App = () => {
+    const [categories, setCategories] = useState(null);
+    useEffect(async () => {
+        const values = await axiosConfig.get("/category");
+        setCategories(values.data);
+    }, []);
+
+    console.log(categories);
     return (
         <div className="App">
             <header className="App-header">
@@ -9,6 +22,7 @@ function App() {
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
+
                 <a
                     className="App-link"
                     href="https://reactjs.org"
@@ -17,10 +31,10 @@ function App() {
                 >
                     Learn React!
                 </a>
-                <a>Test CI And Heroku</a>
+                <a>{categories}</a>
             </header>
         </div>
     );
-}
+};
 
 export default App;
