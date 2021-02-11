@@ -3,14 +3,14 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const axiosConfig = axios.create({
-    baseURL: "http://localhost:5000/",
-});
+// const axiosConfig = axios.create({
+//     baseURL: "http://localhost:5000/",
+// });
 
 const App = () => {
     const [categories, setCategories] = useState(null);
     useEffect(async () => {
-        const values = await axiosConfig.get("/category");
+        const values = await axios.get("/api/category");
         setCategories(values.data);
     }, []);
 
