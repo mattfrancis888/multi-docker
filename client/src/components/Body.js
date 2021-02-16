@@ -3,16 +3,20 @@ import axios from "axios";
 import CategoryContainer from "./CategoryContainer";
 import Loading from "./Loading";
 //import { Link } from "react-router-dom";
-// const axiosConfig = axios.create({
-//     baseURL: "http://localhost:5000/",
-// });
+//Because we are using vercel to deploy instead of AWS:
+const axiosConfig = axios.create({
+    baseURL: "https://multi-docker-backend.vercel.app/",
+});
 
 const Body = () => {
     const [categories, setCategories] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
-            const values = await axios.get("/api/category");
+            //When we deploy with AWS:
+            // const values = await axios.get("/api/category");
+            //When we deploy with Vercel:
+            const values = await axiosConfig.get("/category");
             setCategories(values.data);
         }
         fetchData();
