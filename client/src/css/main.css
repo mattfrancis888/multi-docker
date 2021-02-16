@@ -1,0 +1,906 @@
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  box-sizing: inherit;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin-top: 5rem;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template,
+[hidden] {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  font-size: 62.5%;
+}
+
+body {
+  /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
+  font: 1.1rem "TT Norms", helvetica, arial, sans-serif;
+}
+
+.categoriesWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .categoriesWrap {
+    margin-bottom: 8rem;
+  }
+}
+
+.categoriesInKijijiTitle {
+  text-align: center;
+  color: purple;
+  padding: 3rem 3rem 0 3rem;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 520px) {
+  .categoriesInKijijiTitle {
+    letter-spacing: 0.15rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .categoriesInKijijiTitle {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .categoriesInKijijiTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.linkToProjectRepoTitle {
+  text-align: center;
+  color: lightgreen;
+  font-size: 1.3rem;
+  margin-bottom: 5rem;
+  transition: all 0.2s ease 0s;
+}
+@media screen and (min-width: 520px) {
+  .linkToProjectRepoTitle {
+    letter-spacing: 0.15rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .linkToProjectRepoTitle {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .linkToProjectRepoTitle {
+    font-size: 2.1rem;
+  }
+}
+.linkToProjectRepoTitle:hover {
+  cursor: pointer;
+  color: greenyellow;
+}
+
+.loadingCenter {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.loadingCenter > span {
+  margin: 0 auto;
+  z-index: -1;
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .loadingCenter > span {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loadingCenter > span {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+.serverErrorContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.serverErrorContainer h3 {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: purple;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .serverErrorContainer h3 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.categoryContainer:nth-child(1) {
+  background-color: #bbe2e1;
+}
+
+.categoryContainer:nth-child(2) {
+  background-color: #415b68;
+}
+
+.categoryContainer:nth-child(3) {
+  background-color: #efaea9;
+}
+
+.categoryContainer:nth-child(4) {
+  background-color: #eedde4;
+}
+
+.categoryContainer:nth-child(5) {
+  background-color: #f1d0d0;
+}
+
+.categoryContainer:nth-child(6) {
+  background-color: #d74774;
+}
+
+.categoryContainer:nth-child(7) {
+  background-color: #b3df53;
+}
+
+.categoryContainer:nth-child(8) {
+  background-color: #433082;
+}
+
+.categoryContainer:nth-child(9) {
+  background-color: #bee4d2;
+}
+
+.categoryContainer:nth-child(10) {
+  background-color: #4a6ad3;
+}
+
+.categoryContainer:nth-child(11) {
+  background-color: #bfc7d9;
+}
+
+.categoryContainer:nth-child(12) {
+  background-color: #62da52;
+}
+
+.categoryContainer:nth-child(13) {
+  background-color: #3476c5;
+}
+
+.categoryContainer:nth-child(14) {
+  background-color: #50649f;
+}
+
+.categoryContainer:nth-child(15) {
+  background-color: #564582;
+}
+
+.categoryContainer:nth-child(16) {
+  background-color: #c1ced7;
+}
+
+.categoryContainer:nth-child(17) {
+  background-color: #3d496c;
+}
+
+.categoryContainer:nth-child(18) {
+  background-color: #d7e699;
+}
+
+.categoryContainer:nth-child(19) {
+  background-color: #2b9190;
+}
+
+.categoryContainer:nth-child(20) {
+  background-color: #cd98a5;
+}
+
+.categoryContainer:nth-child(21) {
+  background-color: #aeaa47;
+}
+
+.categoryContainer:nth-child(22) {
+  background-color: #8040c9;
+}
+
+.categoryContainer:nth-child(23) {
+  background-color: #5785a8;
+}
+
+.categoryContainer:nth-child(24) {
+  background-color: #316f72;
+}
+
+.categoryContainer:nth-child(25) {
+  background-color: #d5e6d0;
+}
+
+.categoryContainer:nth-child(26) {
+  background-color: #c8a7c0;
+}
+
+.categoryContainer:nth-child(27) {
+  background-color: #c7b68e;
+}
+
+.categoryContainer:nth-child(28) {
+  background-color: #f0eed6;
+}
+
+.categoryContainer:nth-child(29) {
+  background-color: #bbe481;
+}
+
+.categoryContainer:nth-child(30) {
+  background-color: #839b3b;
+}
+
+.categoryContainer:nth-child(31) {
+  background-color: #3f8847;
+}
+
+.categoryContainer:nth-child(32) {
+  background-color: #a5dfa7;
+}
+
+.categoryContainer:nth-child(33) {
+  background-color: #66b79a;
+}
+
+.categoryContainer:nth-child(34) {
+  background-color: #f4eed2;
+}
+
+.categoryContainer:nth-child(35) {
+  background-color: #ebcc9e;
+}
+
+.categoryContainer:nth-child(36) {
+  background-color: #63ca80;
+}
+
+.categoryContainer:nth-child(37) {
+  background-color: #34a269;
+}
+
+.categoryContainer:nth-child(38) {
+  background-color: #5b2877;
+}
+
+.categoryContainer:nth-child(39) {
+  background-color: #9e2426;
+}
+
+.categoryContainer:nth-child(40) {
+  background-color: #75a99d;
+}
+
+.categoryContainer:nth-child(41) {
+  background-color: #d0ebe0;
+}
+
+.categoryContainer:nth-child(42) {
+  background-color: #8fccaf;
+}
+
+.categoryContainer:nth-child(43) {
+  background-color: #8c47bd;
+}
+
+.categoryContainer:nth-child(44) {
+  background-color: #f5d6e5;
+}
+
+.categoryContainer:nth-child(45) {
+  background-color: #cde3a6;
+}
+
+.categoryContainer:nth-child(46) {
+  background-color: #e9ddde;
+}
+
+.categoryContainer:nth-child(47) {
+  background-color: #b950d3;
+}
+
+.categoryContainer:nth-child(48) {
+  background-color: #ce756f;
+}
+
+.categoryContainer:nth-child(49) {
+  background-color: #379db3;
+}
+
+.categoryContainer:nth-child(50) {
+  background-color: #769bb2;
+}
+
+.categoryContainer:nth-child(51) {
+  background-color: #a8943e;
+}
+
+.categoryContainer:nth-child(52) {
+  background-color: #ece9d5;
+}
+
+.categoryContainer:nth-child(53) {
+  background-color: #dc81e4;
+}
+
+.categoryContainer:nth-child(54) {
+  background-color: #cbdda6;
+}
+
+.categoryContainer:nth-child(55) {
+  background-color: #77a6a2;
+}
+
+.categoryContainer:nth-child(56) {
+  background-color: #69c6dd;
+}
+
+.categoryContainer:nth-child(57) {
+  background-color: #6d7d40;
+}
+
+.categoryContainer:nth-child(58) {
+  background-color: #b29a5c;
+}
+
+.categoryContainer:nth-child(59) {
+  background-color: #95417d;
+}
+
+.categoryContainer:nth-child(60) {
+  background-color: #aca3d7;
+}
+
+.categoryContainer:nth-child(61) {
+  background-color: #859ed1;
+}
+
+.categoryContainer:nth-child(62) {
+  background-color: #38798a;
+}
+
+.categoryContainer:nth-child(63) {
+  background-color: #6d88ba;
+}
+
+.categoryContainer:nth-child(64) {
+  background-color: #5931d3;
+}
+
+.categoryContainer:nth-child(65) {
+  background-color: #c08299;
+}
+
+.categoryContainer:nth-child(66) {
+  background-color: #aabcee;
+}
+
+.categoryContainer:nth-child(67) {
+  background-color: #cd93cc;
+}
+
+.categoryContainer:nth-child(68) {
+  background-color: #8468ac;
+}
+
+.categoryContainer:nth-child(69) {
+  background-color: #6582b3;
+}
+
+.categoryContainer:nth-child(70) {
+  background-color: #9b84b8;
+}
+
+.categoryContainer:nth-child(71) {
+  background-color: #a9beea;
+}
+
+.categoryContainer:nth-child(72) {
+  background-color: #dbe4d3;
+}
+
+.categoryContainer:nth-child(73) {
+  background-color: #329a37;
+}
+
+.categoryContainer:nth-child(74) {
+  background-color: #a72dd7;
+}
+
+.categoryContainer:nth-child(75) {
+  background-color: #a5b4c5;
+}
+
+.categoryContainer:nth-child(76) {
+  background-color: #4a785b;
+}
+
+.categoryContainer:nth-child(77) {
+  background-color: #cf56e1;
+}
+
+.categoryContainer:nth-child(78) {
+  background-color: #c0c0de;
+}
+
+.categoryContainer:nth-child(79) {
+  background-color: #944b95;
+}
+
+.categoryContainer:nth-child(80) {
+  background-color: #eeaae6;
+}
+
+.categoryContainer:nth-child(81) {
+  background-color: #c0d8ca;
+}
+
+.categoryContainer:nth-child(82) {
+  background-color: #73da44;
+}
+
+.categoryContainer:nth-child(83) {
+  background-color: #782726;
+}
+
+.categoryContainer:nth-child(84) {
+  background-color: #327f24;
+}
+
+.categoryContainer:nth-child(85) {
+  background-color: #364e72;
+}
+
+.categoryContainer:nth-child(86) {
+  background-color: #6d7bd9;
+}
+
+.categoryContainer:nth-child(87) {
+  background-color: #dbe7d5;
+}
+
+.categoryContainer:nth-child(88) {
+  background-color: #b3827a;
+}
+
+.categoryContainer:nth-child(89) {
+  background-color: #f1dada;
+}
+
+.categoryContainer:nth-child(90) {
+  background-color: #c52648;
+}
+
+.categoryContainer:nth-child(91) {
+  background-color: #3e7589;
+}
+
+.categoryContainer:nth-child(92) {
+  background-color: #7991af;
+}
+
+.categoryContainer:nth-child(93) {
+  background-color: #a84d90;
+}
+
+.categoryContainer:nth-child(94) {
+  background-color: #c2ebb7;
+}
+
+.categoryContainer:nth-child(95) {
+  background-color: #c1c9e1;
+}
+
+.categoryContainer:nth-child(96) {
+  background-color: #427051;
+}
+
+.categoryContainer:nth-child(97) {
+  background-color: #d4e8dc;
+}
+
+.categoryContainer:nth-child(98) {
+  background-color: #95b668;
+}
+
+.categoryContainer:nth-child(99) {
+  background-color: #99c29d;
+}
+
+.categoryContainer:nth-child(100) {
+  background-color: #c28be4;
+}
+
+.categoryContainer {
+  padding: 5rem 1rem;
+  border-radius: 4rem;
+  width: 45%;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+.categoryContainer h3 {
+  background-color: purple;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .categoryContainer h3 {
+    font-size: 1.5rem;
+  }
+}
+.categoryContainer:hover {
+  transition: all 0.25s ease 0s;
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .categoryContainer {
+    margin: 1rem;
+    width: 30%;
+    padding: 10rem 5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
