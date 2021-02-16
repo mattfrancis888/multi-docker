@@ -1,0 +1,884 @@
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  box-sizing: inherit;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin-top: 5rem;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template,
+[hidden] {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  font-size: 62.5%;
+}
+
+body {
+  /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
+  font: 1.1rem "TT Norms", helvetica, arial, sans-serif;
+}
+
+.categoriesWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .categoriesWrap {
+    margin-bottom: 8rem;
+  }
+}
+
+.categoriesInKijijiTitle {
+  text-align: center;
+  color: purple;
+  padding: 3rem 3rem 0 3rem;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 520px) {
+  .categoriesInKijijiTitle {
+    letter-spacing: 0.15rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .categoriesInKijijiTitle {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .categoriesInKijijiTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.linkToProjectRepoTitle {
+  text-align: center;
+  color: lightgreen;
+  font-size: 1.3rem;
+  margin-bottom: 5rem;
+  transition: all 0.2s ease 0s;
+}
+@media screen and (min-width: 520px) {
+  .linkToProjectRepoTitle {
+    letter-spacing: 0.15rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .linkToProjectRepoTitle {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .linkToProjectRepoTitle {
+    font-size: 2.1rem;
+  }
+}
+.linkToProjectRepoTitle:hover {
+  cursor: pointer;
+  color: greenyellow;
+}
+
+.loadingCenter {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.loadingCenter > span {
+  margin: 0 auto;
+  z-index: -1;
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .loadingCenter > span {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loadingCenter > span {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+.categoryContainer:nth-child(1) {
+  background-color: #63bf93;
+}
+
+.categoryContainer:nth-child(2) {
+  background-color: #d48c92;
+}
+
+.categoryContainer:nth-child(3) {
+  background-color: #af73b0;
+}
+
+.categoryContainer:nth-child(4) {
+  background-color: #9aab54;
+}
+
+.categoryContainer:nth-child(5) {
+  background-color: #c58b81;
+}
+
+.categoryContainer:nth-child(6) {
+  background-color: #e37d68;
+}
+
+.categoryContainer:nth-child(7) {
+  background-color: #a68cd4;
+}
+
+.categoryContainer:nth-child(8) {
+  background-color: #f5f2d6;
+}
+
+.categoryContainer:nth-child(9) {
+  background-color: #dbcc94;
+}
+
+.categoryContainer:nth-child(10) {
+  background-color: #a38e62;
+}
+
+.categoryContainer:nth-child(11) {
+  background-color: #717cb7;
+}
+
+.categoryContainer:nth-child(12) {
+  background-color: #ddb1c4;
+}
+
+.categoryContainer:nth-child(13) {
+  background-color: #dcbd4c;
+}
+
+.categoryContainer:nth-child(14) {
+  background-color: #aacabd;
+}
+
+.categoryContainer:nth-child(15) {
+  background-color: #a9dea0;
+}
+
+.categoryContainer:nth-child(16) {
+  background-color: #f4e5d2;
+}
+
+.categoryContainer:nth-child(17) {
+  background-color: #5c1985;
+}
+
+.categoryContainer:nth-child(18) {
+  background-color: #ddbc88;
+}
+
+.categoryContainer:nth-child(19) {
+  background-color: #c4e5a4;
+}
+
+.categoryContainer:nth-child(20) {
+  background-color: #d4ede6;
+}
+
+.categoryContainer:nth-child(21) {
+  background-color: #659ab8;
+}
+
+.categoryContainer:nth-child(22) {
+  background-color: #594f7d;
+}
+
+.categoryContainer:nth-child(23) {
+  background-color: #6b5388;
+}
+
+.categoryContainer:nth-child(24) {
+  background-color: #4442cd;
+}
+
+.categoryContainer:nth-child(25) {
+  background-color: #87d1e3;
+}
+
+.categoryContainer:nth-child(26) {
+  background-color: #b7eaf0;
+}
+
+.categoryContainer:nth-child(27) {
+  background-color: #459261;
+}
+
+.categoryContainer:nth-child(28) {
+  background-color: #d06149;
+}
+
+.categoryContainer:nth-child(29) {
+  background-color: #3ab699;
+}
+
+.categoryContainer:nth-child(30) {
+  background-color: #b9d572;
+}
+
+.categoryContainer:nth-child(31) {
+  background-color: #8f283f;
+}
+
+.categoryContainer:nth-child(32) {
+  background-color: #91baa7;
+}
+
+.categoryContainer:nth-child(33) {
+  background-color: #e7d5db;
+}
+
+.categoryContainer:nth-child(34) {
+  background-color: #d1bddb;
+}
+
+.categoryContainer:nth-child(35) {
+  background-color: #4ebc8a;
+}
+
+.categoryContainer:nth-child(36) {
+  background-color: #a88e61;
+}
+
+.categoryContainer:nth-child(37) {
+  background-color: #cfeddc;
+}
+
+.categoryContainer:nth-child(38) {
+  background-color: #286676;
+}
+
+.categoryContainer:nth-child(39) {
+  background-color: #784f5a;
+}
+
+.categoryContainer:nth-child(40) {
+  background-color: #6a95cd;
+}
+
+.categoryContainer:nth-child(41) {
+  background-color: #dcda50;
+}
+
+.categoryContainer:nth-child(42) {
+  background-color: #b068d9;
+}
+
+.categoryContainer:nth-child(43) {
+  background-color: #7bbc92;
+}
+
+.categoryContainer:nth-child(44) {
+  background-color: #43ad66;
+}
+
+.categoryContainer:nth-child(45) {
+  background-color: #3d6144;
+}
+
+.categoryContainer:nth-child(46) {
+  background-color: #dcd2ea;
+}
+
+.categoryContainer:nth-child(47) {
+  background-color: #912751;
+}
+
+.categoryContainer:nth-child(48) {
+  background-color: #9ece5a;
+}
+
+.categoryContainer:nth-child(49) {
+  background-color: #c18453;
+}
+
+.categoryContainer:nth-child(50) {
+  background-color: #bd707f;
+}
+
+.categoryContainer:nth-child(51) {
+  background-color: #c292e2;
+}
+
+.categoryContainer:nth-child(52) {
+  background-color: #84429e;
+}
+
+.categoryContainer:nth-child(53) {
+  background-color: #39add0;
+}
+
+.categoryContainer:nth-child(54) {
+  background-color: #97d3a0;
+}
+
+.categoryContainer:nth-child(55) {
+  background-color: #aec6d5;
+}
+
+.categoryContainer:nth-child(56) {
+  background-color: #5bb381;
+}
+
+.categoryContainer:nth-child(57) {
+  background-color: #bf7898;
+}
+
+.categoryContainer:nth-child(58) {
+  background-color: #e88ca8;
+}
+
+.categoryContainer:nth-child(59) {
+  background-color: #8e2e4e;
+}
+
+.categoryContainer:nth-child(60) {
+  background-color: #857c51;
+}
+
+.categoryContainer:nth-child(61) {
+  background-color: #8aafd0;
+}
+
+.categoryContainer:nth-child(62) {
+  background-color: #e0aec5;
+}
+
+.categoryContainer:nth-child(63) {
+  background-color: #e0bdcf;
+}
+
+.categoryContainer:nth-child(64) {
+  background-color: #5678b3;
+}
+
+.categoryContainer:nth-child(65) {
+  background-color: #f2dcd4;
+}
+
+.categoryContainer:nth-child(66) {
+  background-color: #7965dc;
+}
+
+.categoryContainer:nth-child(67) {
+  background-color: #3e802d;
+}
+
+.categoryContainer:nth-child(68) {
+  background-color: #c8ecc6;
+}
+
+.categoryContainer:nth-child(69) {
+  background-color: #7d91aa;
+}
+
+.categoryContainer:nth-child(70) {
+  background-color: #abb5cf;
+}
+
+.categoryContainer:nth-child(71) {
+  background-color: #c1b8ea;
+}
+
+.categoryContainer:nth-child(72) {
+  background-color: #72bdc5;
+}
+
+.categoryContainer:nth-child(73) {
+  background-color: #5bb988;
+}
+
+.categoryContainer:nth-child(74) {
+  background-color: #cc9d71;
+}
+
+.categoryContainer:nth-child(75) {
+  background-color: #e8d9e7;
+}
+
+.categoryContainer:nth-child(76) {
+  background-color: #77cf8a;
+}
+
+.categoryContainer:nth-child(77) {
+  background-color: #ce5e36;
+}
+
+.categoryContainer:nth-child(78) {
+  background-color: #d4d58b;
+}
+
+.categoryContainer:nth-child(79) {
+  background-color: #3350c1;
+}
+
+.categoryContainer:nth-child(80) {
+  background-color: #523965;
+}
+
+.categoryContainer:nth-child(81) {
+  background-color: #c9bc9c;
+}
+
+.categoryContainer:nth-child(82) {
+  background-color: #b5e6b2;
+}
+
+.categoryContainer:nth-child(83) {
+  background-color: #6ee46c;
+}
+
+.categoryContainer:nth-child(84) {
+  background-color: #addf9f;
+}
+
+.categoryContainer:nth-child(85) {
+  background-color: #4e278b;
+}
+
+.categoryContainer:nth-child(86) {
+  background-color: #79356d;
+}
+
+.categoryContainer:nth-child(87) {
+  background-color: #84492a;
+}
+
+.categoryContainer:nth-child(88) {
+  background-color: #8c4a5f;
+}
+
+.categoryContainer:nth-child(89) {
+  background-color: #60be46;
+}
+
+.categoryContainer:nth-child(90) {
+  background-color: #734547;
+}
+
+.categoryContainer:nth-child(91) {
+  background-color: #c492bd;
+}
+
+.categoryContainer:nth-child(92) {
+  background-color: #cc75a4;
+}
+
+.categoryContainer:nth-child(93) {
+  background-color: #989852;
+}
+
+.categoryContainer:nth-child(94) {
+  background-color: #5e7826;
+}
+
+.categoryContainer:nth-child(95) {
+  background-color: #dba984;
+}
+
+.categoryContainer:nth-child(96) {
+  background-color: #dbd6e6;
+}
+
+.categoryContainer:nth-child(97) {
+  background-color: #89dc8f;
+}
+
+.categoryContainer:nth-child(98) {
+  background-color: #b0ab87;
+}
+
+.categoryContainer:nth-child(99) {
+  background-color: #77ca9f;
+}
+
+.categoryContainer:nth-child(100) {
+  background-color: #9eb5cc;
+}
+
+.categoryContainer {
+  padding: 5rem 1rem;
+  border-radius: 4rem;
+  width: 45%;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+.categoryContainer h3 {
+  background-color: purple;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .categoryContainer h3 {
+    font-size: 1.5rem;
+  }
+}
+.categoryContainer:hover {
+  transition: all 0.25s ease 0s;
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .categoryContainer {
+    margin: 1rem;
+    width: 30%;
+    padding: 10rem 5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

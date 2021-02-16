@@ -1,0 +1,48 @@
+.categoriesWrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    @media screen and (min-width: $md_breakpoint) {
+        margin-bottom: 8rem;
+    }
+}
+
+.categoriesInKijijiTitle {
+    text-align: center;
+    color: purple;
+    padding: 3rem 3rem 0 3rem;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: $sm_breakpoint) {
+        letter-spacing: 0.15rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 2rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.5rem;
+    }
+}
+
+.linkToProjectRepoTitle {
+    text-align: center;
+    color: lightgreen;
+    font-size: 1.3rem;
+    margin-bottom: 5rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        letter-spacing: 0.15rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.7rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 2.1rem;
+    }
+    transition: all 0.2s ease 0s;
+    &:hover {
+        cursor: pointer;
+        color: greenyellow;
+    }
+}

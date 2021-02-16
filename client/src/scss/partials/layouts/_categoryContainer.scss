@@ -1,0 +1,50 @@
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+@for $i from 1 through 100 {
+    .categoryContainer:nth-child(#{$i}) {
+        background-color: hsl(
+            random(360),
+            $s-min + random($s-max + -$s-min),
+            $l-min + random($l-max + -$l-min)
+        );
+    }
+}
+
+.categoryContainer {
+    padding: 5rem 1rem;
+    border-radius: 4rem;
+    width: 45%;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+
+    h3 {
+        background-color: purple;
+        border-radius: 1rem;
+        padding: 1rem;
+        color: white;
+        text-align: center;
+        font-size: 1.2rem;
+
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.5rem;
+        }
+    }
+    &:hover {
+        transition: all 0.25s ease 0s;
+        opacity: 1;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        margin: 1rem;
+        width: 30%;
+        padding: 10rem 5rem;
+    }
+}
+
+//Random color:
+//https://gist.github.com/jamiewilson/aa98a81e0d0955fbf068
