@@ -13,7 +13,7 @@ const Body = () => {
 
     useEffect(() => {
         async function fetchData() {
-            //When we deploy with AWS:
+            //When we deploy with AWS / in development:
             // const values = await axios.get("/api/category");
             //When we deploy with Vercel:
             const values = await axiosConfig.get("/category");
@@ -27,7 +27,7 @@ const Body = () => {
     const renderCarousel = () => {
         if (!categories)
             return (
-                <div className="loadingCenter">
+                <div className="loadingCenter" data-testid="loading">
                     <Loading />
                 </div>
             );
