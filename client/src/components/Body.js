@@ -9,7 +9,7 @@ const axiosConfig = axios.create({
 });
 
 const Body = () => {
-    const [categories, setCategories] = useState(null);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -22,10 +22,8 @@ const Body = () => {
         fetchData();
     }, []);
 
-    console.log(categories);
-
     const renderCarousel = () => {
-        if (!categories)
+        if (categories.length === 0)
             return (
                 <div className="loadingCenter" data-testid="loading">
                     <Loading />

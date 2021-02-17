@@ -40,4 +40,13 @@ services:
         volumes:
             - /app/node_modules
             - ./server:/app
+    test:
+        #https://www.alanfoster.me/posts/running-react-unit-tests-within-docker/
+        #we cannot use 'volumes' for test, just do a normal npm run test without docker
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./client
+        environment:
+            - CI=true
+        command: npm test
 #We are usign docker compose here for volumes
