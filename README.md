@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# multi-docker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-page app that shows the categories available (stored in PostgreSQL) from a previous project, Kijiji. Built to understand Docker, AWS infrastructure (eg: EC2, S3, RDS, VPS, Security Groups, etc), the deployment process to AWS Elastic Beanstalk, and CI/CD flow.
 
-## Available Scripts
+**Note: The app is now deployed at Vercel because of the cost of running an AWS server.**
 
-In the project directory, you can run:
+# Why I Built It And What I've Learned:
 
-### `npm start`
+-   To understand what and why we use Docker.
+-   To understand how Docker is used in development and production.
+-   To understand AWS's infrastructure for website deployments.
+-   To understand CI/CD. TravisCI was used here.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Docker And AWS Beanstalk flow:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In my Dockerfile, I used nginx as my production server. I pushed my images to Docker Hub. AWS would then get the images from Docker Hub and serve it up.
 
-### `npm test`
+### Why we use Docker?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Docker facilitates installing and executing dependencies associated with a project for any given computer. This prevents scenarios where our installation would fail after cloning a remote repository to a computer.
 
-### `npm run build`
+### Docker Compose
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For development, Docker Compose is a tool for defining and running multi-container Docker applications/Dockerfiles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Note for me:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   When running `docker-compose up` make sure you are at the directory where the `docker-compose` file is. Otherwise, it will still execute but other Dockerfiles will not be executed.
+-   Refer to `docker commands` file in your google drive for a list of commands for Docker.
 
-### `npm run eject`
+## AWS
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Diagram of AWS's infrastructure:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="readmeImg/aws-diagram.png" height="350"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### EC2 - Elastic Compute Cloud:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+EC2 is Amazon's service that allows you to create a server (AWS calls these instances) in the AWS cloud. You pay by the hour and only what you use. You can do whatever you want with this instance as well as launch n number of instances. flexible.
 
-## Learn More
+### AWS's Storage Options
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### RDS - Relational Database Service:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Web service that's maintained by AWS engineers to simplify the setup, operation, and scaling of a database for use in applications. In essence, we allow AWS to "handle" our database; we have less control of our database.
 
-### Code Splitting
+#### Amazon S3:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Provides object storage through a web service interface. Amazon RDS enables you to run a fully-featured relational database while offloading database administration. Whereas, for more control and flexibility, EC2 will be better for your relational database.
 
-### Analyzing the Bundle Size
+### Elastic Beanstalk:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Elastic Beanstalk is one layer of abstraction away from the EC2 layer. Elastic Beanstalk will setup an "environment" for you that can contain a number of EC2 instances, an optional database, as well as a few other AWS components such as a **Elastic Load Balancer, Auto-Scaling Group, Security Group**. Then Elastic Beanstalk will manage these items for you whenever you want to update your software running in AWS. Elastic Beanstalk doesn't add any cost on top of these resources that it creates for you. If you have 10 hours of EC2 usage, then all you pay is 10 compute hours.
 
-### Making a Progressive Web App
+### Load Balancers:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, Lambda functions, and virtual appliances.
 
-### Advanced Configuration
+Since our project is 'dockerized', the load balancer would create new containers automatically to distribute user traffic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img src="readmeImg/load-balancer.png" height="350"/>
 
-### Deployment
+Note: We don't have to use Elastic Beanstalk to enable load balancing. If we only have an ES2 running, the load balancers are the same, but Beanstalk manages the configuration for us. If we want to roll our own infrastructure, we'll need to manually configure a load balancer, add rules to route traffic to our EC2 instances, etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Diagram of VPC and Security Groups:
 
-### `npm run build` fails to minify
+<img src="readmeImg/vpc-security.png" height="350"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### VPC - Virtual Private Cloud:
+
+Our Private build network. Any instance/services that we create is in our `VPC`/associated with only our account.
+
+### Security Groups
+
+Essentially are 'firewall rules'. Rule(s) that describe what services can connect to our services running in our VPC. In the diagram below, the RDS and EC can talk to each other because of our Security group configuration.
+
+## Production
+
+### Nginx
+
+Acts as a production server to take incoming request / handle our React application code in production. Nginx is also used as a development server.
+
+### Images in Dockerhub
+
+After the commit passes TravisCI, we push our images to Docker Hub. Elastic Beanstalk will use the images in Docker Hub with `Dockerrun.aws.json`.
+
+## What It Looks Like
+
+<img src="readmeImg/homepage.png" height="350"/>
+
+# Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+1. Clone the project. Change the Axios call that's supposed to be used for development in `App.js`. Use `docker-compose up --build`.
+
+# Prerequisites
+
+What things you need to install the software
+
+```
+- Any package manager (npm, yarn)
+```
+
+# Versioning
+
+None
